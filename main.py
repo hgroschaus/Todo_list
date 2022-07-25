@@ -16,7 +16,7 @@ def get_todo_list(filepath):
        with open(filepath) as d:
             todo = json.load(d)
     except FileNotFoundError:
-        todo = []
+        return []
     return todo
 
 
@@ -28,16 +28,20 @@ def todo_main_menu():
         display_menu()
         key = input("\nWhat to you want to do ? ")
         if key not in INPUTS:
-            print("Error, please chose a number from 1 to 4")
+            print("Error, please choose a number available")
             continue
         else:
             if not handle_input(key, todo):
                 break
     try:
         with open(JSON_FILE, 'r+') as f:
-            f.seek(0)
-            json.dump(todo, f)
-            f.truncate()
+            data = json.load(f)
+            for i in range(len(data)):
+                if not data[i] == todo[i]:
+                    f.seek(0)
+                    json.dump(todo, f)
+                    f.truncate()
+                    break
     except FileNotFoundError:
         print("Error the file was not found")
 

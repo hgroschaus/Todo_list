@@ -2,13 +2,13 @@ DISPLAY = "1"
 ADD = "2"
 DELETE = "3"
 UPDATE = "4"
-QUIT = '5'
+QUIT = "5"
 
 def display_elems(todo):
     print()
     for n, e in enumerate(todo):
         status = "Done" if e["done"] == True else "To DO"
-        print(n+1, "-", e["task"], "-", status)
+        print(n+1, "-", e["task"], "-", "Done" if e["done"] == True else "To DO")
     print()
 
 
@@ -46,7 +46,7 @@ def update_elem(todo):
         print("\nYour list is empty, you can't update anything.\n")
         return
     display_elems(todo)
-    elem = input("Please enter the number of element you want to update: ")
+    elem = input("Please enter the number of the element you want to update: ")
     try:
         i = int(elem) - 1
         todo[i]["done"] = True if todo[i]["done"] == False else False
