@@ -18,13 +18,14 @@ def add_elem(todo):
         if task.lower() in i["task"].lower():
             print("This task is already saved.")
             return add_elem(todo)
-    done = input("please enter 'true'if your elem is done, & 'false' otherwise: ")
+    done = input("please enter 'true' if your elem is done, & 'false' otherwise: ")
     if done.lower() == "true" or done.lower() == "false":
         done = done.capitalize()
     else:
         print("\nYou have to enter true or false, please try again\n")
         return add_elem(todo)
     todo.append({"task":task, "done": done})
+    print()
 
 
 def delete_elem(todo):
