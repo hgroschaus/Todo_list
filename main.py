@@ -24,7 +24,7 @@ def get_todo_list(filepath):
 def todo_main_menu():
     todo = get_todo_list(JSON_FILE)
 
-    print("Hello & Welcome to your ToDoList !\n")
+    print("\nHello & Welcome to your ToDoList !\n")
     sleep(1)
     while True:
         display_menu()
