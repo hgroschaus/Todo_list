@@ -1,4 +1,8 @@
-# Todo_list
-First personal project in python, a todo list 
+# TodoList
+## Ce projet est un mon premier projet personnel en Python sans suivre de tutoriel.
 
-This project is basically a personal project done to improve my personnal knowledge on python and which i will try to improve over time.
+## Setup
+You just have to execute the main.py file & follow instructions to add, delete or update your list
+```bash
+# python main.py
+```
